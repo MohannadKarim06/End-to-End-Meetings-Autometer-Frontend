@@ -3,6 +3,8 @@ import requests
 import time
 import os
 
+os.environ["STREAMLIT_WATCH_FILE_SYSTEM"] = "false"
+
 API_BASE = os.getenv("API_BASE")   
 
 st.set_page_config(page_title="Meeting Automator", layout="centered")
