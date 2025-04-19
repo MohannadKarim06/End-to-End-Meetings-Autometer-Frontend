@@ -63,8 +63,8 @@ if audio_file and st.button("Transcribe + Analyze"):
                 st.subheader("✅ Action Items")
                 for i, item in enumerate(action_items, 1):
                     st.markdown(f"**{i}.** `{item.get('task')}`")
-                    if item.get("owner"):
-                        st.write(f"- Owner: {item['owner']}")
+                    if item.get("assigned_to"):
+                        st.write(f"- Assigned_to: {item['assigned_to']}")
                     if item.get("deadline"):
                         st.write(f"- Deadline: {item['deadline']}")
             else:
