@@ -2,10 +2,13 @@ import streamlit as st
 import requests
 import time
 import os
-
 os.environ["STREAMLIT_WATCH_FILE_SYSTEM"] = "false"
 
-API_BASE = os.getenv("API_BASE")   
+API_BASE = os.getenv("API_BASE")
+
+if not API_BASE:
+    st.error("🚨 API endpoint not set. Please configure the `API_BASE` in Streamlit secrets.")
+    st.stop()
 
 st.set_page_config(page_title="Meeting Automator", layout="centered")
 st.title("📋 Meeting Automation Assistant")
