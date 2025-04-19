@@ -4,7 +4,7 @@ import time
 import os
 os.environ["STREAMLIT_WATCH_FILE_SYSTEM"] = "false"
 
-API_BASE = os.getenv("API_BASE")
+API_BASE = st.secrets["API_BASE"]
 
 if not API_BASE:
     st.error("🚨 API endpoint not set. Please configure the `API_BASE` in Streamlit secrets.")
